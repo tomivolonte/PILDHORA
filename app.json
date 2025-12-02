@@ -1,0 +1,98 @@
+{
+  "expo": {
+    "name": "pildhora-app",
+    "slug": "pildhora-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "pildhora",
+    "plugins": [
+      "expo-router",
+      "@react-native-google-signin/google-signin",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#4F46E5",
+          "sounds": ["./assets/sounds/alarm.wav"],
+          "mode": "production"
+        }
+      ]
+    ],
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#4F46E5",
+      "androidMode": "default",
+      "androidCollapsedTitle": "Recordatorios de Medicamentos"
+    },
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "pildhora.com",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "associatedDomains": [
+        "applinks:pildhora.com"
+      ]
+    },
+    "android": {
+      "package": "com.pildhora.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "googleServicesFile": "./config/google-services.json",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "POST_NOTIFICATIONS",
+        "VIBRATE",
+        "WAKE_LOCK"
+      ],
+      "useNextNotificationsApi": true,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "pildhora.com",
+              "pathPrefix": "/caregiver"
+            },
+            {
+              "scheme": "https",
+              "host": "pildhora.com",
+              "pathPrefix": "/patient"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "router": {
+        "origin": "https://pildhora.com"
+      },
+      "eas": {
+        "projectId": "cd9e689d-375c-4044-b1fe-b5c320f10f0a"
+      }
+    },
+    "owner": "pulpo-code"
+  }
+}

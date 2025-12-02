@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 16.26.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "cache": {
+        "disabled": false,
+        "key": "nativewind-v4-${hash}"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "cache": {
+        "disabled": false,
+        "key": "nativewind-v4-${hash}"
+      },
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "cache": {
+        "disabled": false,
+        "key": "nativewind-v4-${hash}"
+      },
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
